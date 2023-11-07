@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<div class="row">
+<div class="container">
+    @if (User.IsInRole(AppointmentApp.Utility.Helper.Admin))
+    {
+        <div class="row">
+            <div class="form-group col-2" id="divDoctorList" style="border: 1px solid black;padding: 5px;cursor: pointer;">
+                <label> انتخاب دکتر </label>
+                @Html.DropDownList("doctorId", new SelectList(ViewBag.DoctorList, "Id", "Name"), new { @class = "form-control select2", @onchange = "onDoctorChanges();" })
+            </div>
+    
+        </div>
+    }
+        <div class="col-sm-12">
+
+            <div id="calendar"></div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<partial name="_AddEditAppointment" />
+
+
+<div class="text-right pt-2">
+    <p>@HttpContextAccessor.HttpContext.Session.GetString("ssuserName")'s account is logged in</p>
+</div>
+
+@section Scripts{
+    <script src="~/dist/jquery.md.bootstrap.datetimepicker.js" type="text/javascript"></script>
+
+    <script src="~/js/fullcalendar.js"></script>
+    <script src="~/js/fullcalendar.min.js"></script>
+}
