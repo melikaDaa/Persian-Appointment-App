@@ -15,7 +15,7 @@ This project is an appointment scheduling system built with ASP.NET Core and Jav
 **Requirements**
 
 * Visual Studio 2022
-* .NET 6
+* .NET 5&6
 
 **Installation**
 
