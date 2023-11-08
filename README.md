@@ -1,4 +1,5 @@
 **# Appointment Scheduling System**
+<hr/>
  <img  src="https://raw.githubusercontent.com/melikaDaa/Persian-Appointment-App/doc/result.png" width="327"  height="227" />
 
 This project is an appointment scheduling system built with ASP.NET Core and JavaScript. It uses the FullCalendar.js library to provide a calendar interface for users to view and schedule appointments. The system also includes authentication and authorization features to protect user data.
